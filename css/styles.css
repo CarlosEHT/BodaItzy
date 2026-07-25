@@ -1,0 +1,466 @@
+/* =========================================================
+   Youshimart & Itzel — Invitación de boda
+   Design tokens
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap');
+
+:root{
+  --paper:      #f6f1e6;
+  --cream:      #fffdf8;
+  --ink:        #332f27;
+  --ink-soft:   #6b6355;
+  --forest:     #435330;
+  --forest-2:   #5c7042;
+  --sage:       #9aab7c;
+  --gold:       #b6884e;
+  --gold-soft:  #d8b98a;
+  --line:       rgba(67, 83, 48, 0.22);
+  --shadow:     0 30px 60px -25px rgba(51, 45, 25, 0.35);
+
+  --display: 'Alex Brush', cursive;
+  --serif:   'Cormorant Garamond', serif;
+  --sans:    'Jost', sans-serif;
+
+  --edge: clamp(56px, 9vw, 120px);
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+html, body{ overflow-x: hidden; }
+
+body{
+  margin:0;
+  background:
+    linear-gradient(rgba(246,241,230,.72), rgba(246,241,230,.72)),
+    url('../img/paper-bg.jpg');
+  background-size: 900px auto;
+  background-repeat: repeat;
+  color: var(--ink);
+  font-family: var(--serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+img{ max-width:100%; display:block; }
+
+a{ color:inherit; }
+
+.container{
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section{
+  scroll-margin-top: 86px;
+  position: relative;
+  padding: 118px var(--edge) 96px;
+}
+
+.eyebrow{
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 12.5px;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--forest);
+  display:block;
+  margin-bottom: 18px;
+}
+
+h2.section-title{
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(30px, 4vw, 40px);
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.section-sub{
+  color: var(--ink-soft);
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 46px;
+  max-width: 46ch;
+}
+
+/* =========================================================
+   Botanical blooms — scattered, hand-drawn, parallax
+   ========================================================= */
+.bloom{
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  width: clamp(92px, 14vw, 180px);
+  will-change: transform;
+  filter: drop-shadow(0 10px 18px rgba(51,45,25,.16));
+}
+.bloom img{ width:100%; height:auto; display:block; }
+
+.bloom-left{ left: clamp(-42px, -5vw, -18px); transform: translateY(var(--py, 0px)); }
+.bloom-right{ right: clamp(-42px, -5vw, -18px); transform: scaleX(-1) translateY(var(--py, 0px)); }
+
+@media (max-width: 560px){
+  .bloom{ width: clamp(64px, 24vw, 110px); opacity:.92; }
+  .bloom-left{ left: clamp(-26px, -7vw, -12px); }
+  .bloom-right{ right: clamp(-26px, -7vw, -12px); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .bloom{ transition:none; }
+}
+
+/* =========================================================
+   Nav
+   ========================================================= */
+.site-nav{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  background: rgba(255, 253, 248, 0.86);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-nav .nav-inner{
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: clamp(14px, 3vw, 34px);
+  height: 62px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.site-nav .nav-inner::-webkit-scrollbar{ display:none; }
+
+.site-nav a{
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  position: relative;
+  padding: 6px 2px;
+  transition: color .25s ease;
+}
+.site-nav a::after{
+  content:'';
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+.site-nav a:hover,
+.site-nav a.active{ color: var(--forest); }
+.site-nav a.active::after{ transform: scaleX(1); }
+
+/* =========================================================
+   Hero
+   ========================================================= */
+.hero{
+  padding-top: 150px;
+  text-align: center;
+}
+.hero .eyebrow{
+  text-align:center;
+  margin-bottom: 10px;
+}
+.hero .flourish-top{
+  width: 120px;
+  margin: 0 auto 22px;
+  opacity: .85;
+}
+.names{
+  font-family: var(--display);
+  font-size: clamp(64px, 13vw, 118px);
+  line-height: .95;
+  color: var(--forest);
+  margin: 6px 0;
+}
+.amp{
+  display:block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(22px, 3vw, 28px);
+  color: var(--gold);
+  margin: 2px 0;
+}
+.hero-date{
+  font-family: var(--sans);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 22px 0 40px;
+}
+.hero-date strong{ color: var(--forest); font-weight:500; }
+
+.hero-portrait{
+  position: relative;
+  width: min(78%, 340px);
+  aspect-ratio: 1 / 1.12;
+  margin: 0 auto;
+  border-radius: 50% 50% 46% 46% / 55% 55% 45% 45%;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 8px solid var(--cream);
+}
+.hero-portrait img{
+  width:100%; height:100%; object-fit: cover; object-position: center 22%;
+}
+.hero-portrait-ring{
+  position:absolute;
+  inset: -18px;
+  border-radius: 50% 50% 46% 46% / 55% 55% 45% 45%;
+  pointer-events:none;
+}
+
+/* =========================================================
+   Countdown
+   ========================================================= */
+.countdown{
+  text-align:center;
+}
+.countdown .section-sub{ margin-left:auto; margin-right:auto; text-align:center; }
+.countdown-grid{
+  display:flex;
+  justify-content:center;
+  gap: clamp(10px, 3vw, 22px);
+  flex-wrap: wrap;
+}
+.countdown-cell{
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  width: clamp(70px, 20vw, 108px);
+  padding: 20px 6px 16px;
+  box-shadow: 0 14px 30px -18px rgba(51,45,25,.4);
+}
+.countdown-cell .num{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(30px, 6vw, 42px);
+  color: var(--forest);
+  font-variant-numeric: tabular-nums;
+}
+.countdown-cell .label{
+  font-family: var(--sans);
+  font-size: 10.5px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  display:block;
+}
+.countdown-done{
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 26px;
+  color: var(--forest);
+}
+
+/* =========================================================
+   Location
+   ========================================================= */
+.location-card{
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 40px clamp(22px, 5vw, 44px);
+  box-shadow: var(--shadow);
+  text-align:center;
+}
+.location-address{
+  font-size: 20px;
+  line-height:1.6;
+  color: var(--ink);
+  margin: 0 0 26px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding: 15px 30px;
+  border-radius: 2px;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn-primary{
+  background: var(--forest);
+  color: var(--cream);
+  box-shadow: 0 14px 26px -12px rgba(67,83,48,.6);
+}
+.btn-primary:hover{ background: var(--forest-2); transform: translateY(-2px); }
+
+.btn-whatsapp{
+  background: #3f6b3f;
+  color: var(--cream);
+  box-shadow: 0 14px 26px -12px rgba(63,107,63,.55);
+}
+.btn-whatsapp:hover{ background:#345c34; transform: translateY(-2px); }
+
+.qr-box{
+  margin: 34px auto 6px;
+  width: 168px;
+  height: 168px;
+  border: 1.5px dashed var(--gold-soft);
+  border-radius: 6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding: 14px;
+  background: repeating-linear-gradient(135deg, rgba(182,136,78,.06) 0 10px, transparent 10px 20px);
+}
+.qr-box.filled{
+  border-style: solid;
+  padding: 10px;
+  background: #fff;
+}
+.qr-box img{ width:100%; height:100%; object-fit:contain; }
+.qr-box .qr-placeholder-text{
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  line-height:1.5;
+}
+.qr-caption{
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 12px;
+}
+
+/* =========================================================
+   Confirmation
+   ========================================================= */
+.confirm{ text-align:center; }
+.confirm .section-sub{ margin-left:auto; margin-right:auto; margin-bottom: 46px; }
+
+/* =========================================================
+   Dress code
+   ========================================================= */
+.dress{ text-align:center; }
+.dress-badge{
+  display:inline-block;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color: var(--forest);
+  border: 1px solid var(--forest);
+  border-radius: 30px;
+  padding: 10px 26px;
+  margin-bottom: 30px;
+}
+.chip-row{
+  display:flex;
+  justify-content:center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+}
+.chip{
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: .04em;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 10px 20px;
+  color: var(--ink);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.chip .dot{
+  width:7px; height:7px; border-radius:50%;
+  background: var(--gold);
+  display:inline-block;
+}
+.pool-note{
+  max-width: 440px;
+  margin: 0 auto;
+  background: rgba(90,112,66,.08);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 20px 24px;
+  color: var(--ink-soft);
+  font-size: 16.5px;
+  line-height:1.6;
+}
+.pool-note strong{ color: var(--forest); }
+
+/* =========================================================
+   Divider between sections
+   ========================================================= */
+.divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 14px;
+  margin: 0 auto;
+  max-width: 340px;
+  color: var(--gold);
+}
+.divider .line{ flex:1; height:1px; background: var(--line); }
+.divider svg{ width:22px; height:22px; }
+
+/* =========================================================
+   Footer
+   ========================================================= */
+footer{
+  text-align:center;
+  padding: 70px var(--edge) 60px;
+}
+footer .names-small{
+  font-family: var(--display);
+  font-size: 42px;
+  color: var(--forest);
+}
+footer .foot-date{
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 10px;
+}
+
+/* =========================================================
+   Reveal on scroll
+   ========================================================= */
+.reveal{
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  html{ scroll-behavior:auto; }
+}
+
+@media (max-width: 560px){
+  section{ padding-left: 22px; padding-right: 22px; }
+  .location-card{ padding: 30px 20px; }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youshimart &amp; Itzel — Nuestra Boda</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ SVG DEFS ============ -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="motif-leaf-small" viewBox="0 0 40 24">
+      <path d="M2 12 C10 2, 30 2, 38 12 C30 22, 10 22, 2 12 Z" fill="none" stroke="#b6884e" stroke-width="1.3"/>
+      <path d="M2 12 L38 12" stroke="#b6884e" stroke-width="1" opacity=".6"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ Nav ============ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="#inicio" data-nav>Inicio</a>
+    <a href="#cuenta-regresiva" data-nav>Cuenta regresiva</a>
+    <a href="#ubicacion" data-nav>Ubicación</a>
+    <a href="#confirmacion" data-nav>Confirmación</a>
+    <a href="#vestimenta" data-nav>Vestimenta</a>
+  </div>
+</nav>
+
+<!-- ============ Hero ============ -->
+<section id="inicio" class="hero">
+  <div class="bloom bloom-left" style="top:-14px" data-speed="0.04"><img src="img/tulip-a.png" alt=""></div>
+  <div class="bloom bloom-right" style="top:26px" data-speed="0.06"><img src="img/tulip-d.png" alt=""></div>
+  <div class="container">
+    <svg class="flourish-top" viewBox="0 0 120 60" aria-hidden="true">
+      <use href="#motif-leaf-small" x="0" y="18" width="50" height="24"/>
+      <use href="#motif-leaf-small" x="70" y="18" width="50" height="24" transform="scale(-1,1) translate(-190,0)"/>
+    </svg>
+
+    <span class="eyebrow">Nuestra boda</span>
+
+    <h1 class="names">Youshimart<span class="amp">&amp;</span>Itzel</h1>
+
+    <p class="hero-date">Nos casamos el <strong>25 de septiembre de 2026</strong></p>
+
+    <div class="hero-portrait reveal">
+      <img src="img/couple.jpg" alt="Youshimart & Itzel">
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <span class="line"></span>
+  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+  <span class="line"></span>
+</div>
+
+<!-- ============ Countdown ============ -->
+<section id="cuenta-regresiva" class="countdown">
+  <div class="bloom bloom-left" style="top:12%" data-speed="0.08"><img src="img/tulip-c.png" alt=""></div>
+  <div class="bloom bloom-right" style="top:52%" data-speed="0.05"><img src="img/tulip-b.png" alt=""></div>
+  <div class="container reveal">
+    <span class="eyebrow">Falta poco</span>
+    <h2 class="section-title">Contamos los días</h2>
+    <p class="section-sub">A partir de este momento, cada segundo nos acerca un poco más al día en que unimos nuestras vidas.</p>
+
+    <div id="countdown-grid" class="countdown-grid">
+      <div class="countdown-cell"><span class="num" id="cd-days">00</span><span class="label">Días</span></div>
+      <div class="countdown-cell"><span class="num" id="cd-hours">00</span><span class="label">Horas</span></div>
+      <div class="countdown-cell"><span class="num" id="cd-mins">00</span><span class="label">Minutos</span></div>
+      <div class="countdown-cell"><span class="num" id="cd-secs">00</span><span class="label">Segundos</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <span class="line"></span>
+  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+  <span class="line"></span>
+</div>
+
+<!-- ============ Location ============ -->
+<section id="ubicacion" class="location">
+  <div class="bloom bloom-left" style="top:8%" data-speed="0.06"><img src="img/tulip-e.png" alt=""></div>
+  <div class="bloom bloom-right" style="top:48%" data-speed="0.09"><img src="img/tulip-a.png" alt=""></div>
+  <div class="container reveal">
+    <span class="eyebrow">Cómo llegar</span>
+    <h2 class="section-title">Ubicación</h2>
+    <p class="section-sub">La ceremonia y la recepción se llevarán a cabo en la siguiente dirección. Te esperamos.</p>
+
+    <div class="location-card">
+      <p class="location-address">
+        Manuel M. Ponce 1610, Melchor Ocampo,<br>
+        32380 Juárez, Chih., México
+      </p>
+      <a class="btn btn-primary" href="https://maps.app.goo.gl/AJmPXSAXcgB7Ey5h9?g_st=aw" target="_blank" rel="noopener">
+        Cómo llegar
+      </a>
+
+      <div class="qr-box filled">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://maps.app.goo.gl/AJmPXSAXcgB7Ey5h9?g_st=aw" alt="Código QR para abrir la ubicación en Google Maps">
+      </div>
+      <p class="qr-caption">Código QR de la ubicación</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <span class="line"></span>
+  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+  <span class="line"></span>
+</div>
+
+<!-- ============ Confirmation ============ -->
+<section id="confirmacion" class="confirm">
+  <div class="bloom bloom-left" style="top:18%" data-speed="0.07"><img src="img/tulip-d.png" alt=""></div>
+  <div class="bloom bloom-right" style="top:58%" data-speed="0.05"><img src="img/tulip-c.png" alt=""></div>
+  <div class="container reveal">
+    <span class="eyebrow">RSVP</span>
+    <h2 class="section-title">Confirma tu asistencia</h2>
+    <p class="section-sub">Tu presencia es el regalo más importante. Ayúdanos a organizar todo confirmando antes del 1 de septiembre.</p>
+
+    <a class="btn btn-whatsapp" href="https://wa.me/5216561915910?text=Hola,%20confirmo%20mi%20asistencia%20a%20tu%20boda,%20felicidades" target="_blank" rel="noopener">
+      Confirmar por WhatsApp
+    </a>
+
+    <div class="qr-box filled">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://wa.me/5216561915910?text=Hola,%20confirmo%20mi%20asistencia%20a%20tu%20boda,%20felicidades" alt="Código QR para confirmar por WhatsApp">
+    </div>
+    <p class="qr-caption">Escanea para confirmar por WhatsApp</p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <span class="line"></span>
+  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+  <span class="line"></span>
+</div>
+
+<!-- ============ Dress code ============ -->
+<section id="vestimenta" class="dress">
+  <div class="bloom bloom-left" style="top:14%" data-speed="0.06"><img src="img/tulip-b.png" alt=""></div>
+  <div class="bloom bloom-right" style="top:52%" data-speed="0.08"><img src="img/tulip-e.png" alt=""></div>
+  <div class="container reveal">
+    <span class="eyebrow">Código de vestimenta</span>
+    <h2 class="section-title">Semiformal</h2>
+    <p class="section-sub">Queremos que estés cómodo y elegante. Solo te pedimos evitar estos colores para dejárselos a la novia.</p>
+
+    <div class="dress-badge">Semiformal</div>
+
+    <div class="chip-row">
+      <span class="chip"><span class="dot"></span>No blanco</span>
+      <span class="chip"><span class="dot"></span>No rojo</span>
+    </div>
+
+    <div class="pool-note">
+      <strong>¡Habrá alberca!</strong><br>
+      Si quieres refrescarte, trae tu traje de baño — solo recuerda evitar los colores blanco y rojo también en la ropa de alberca.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container reveal">
+    <div class="names-small">Youshimart &amp; Itzel</div>
+    <p class="foot-date">25 · 09 · 2026</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
