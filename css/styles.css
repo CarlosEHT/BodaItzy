@@ -33,7 +33,7 @@ body{
   margin:0;
   background:
     linear-gradient(rgba(246,241,230,.72), rgba(246,241,230,.72)),
-    url('../img/paper-bg.jpg');
+    url('assets/paper-bg.jpg');
   background-size: 900px auto;
   background-repeat: repeat;
   color: var(--ink);
@@ -128,13 +128,21 @@ h2.section-title{
   padding: 0 20px;
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-content: safe center;
   gap: clamp(14px, 3vw, 34px);
   height: 62px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 .site-nav .nav-inner::-webkit-scrollbar{ display:none; }
+
+@media (max-width: 640px){
+  .site-nav .nav-inner{
+    justify-content: flex-start;
+    padding: 0 16px;
+  }
+}
 
 .site-nav a{
   font-family: var(--sans);

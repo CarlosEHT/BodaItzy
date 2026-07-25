@@ -62,7 +62,11 @@
           if (entry.isIntersecting) {
             var id = entry.target.getAttribute('id');
             navLinks.forEach(function (link) {
-              link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+              var isActive = link.getAttribute('href') === '#' + id;
+              link.classList.toggle('active', isActive);
+              if (isActive) {
+                link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+              }
             });
           }
         });
