@@ -362,6 +362,7 @@ h2.section-title{
    Dress code
    ========================================================= */
 .dress{ text-align:center; }
+.dress .section-sub{ margin-left:auto; margin-right:auto; margin-bottom: 46px; }
 .dress-badge{
   display:inline-block;
   font-family: var(--sans);
